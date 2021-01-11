@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjang <jjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/10 16:20:08 by jjang             #+#    #+#             */
-/*   Updated: 2021/01/11 19:23:39 by jjang            ###   ########.fr       */
+/*   Created: 2021/01/11 18:43:11 by jjang             #+#    #+#             */
+/*   Updated: 2021/01/11 19:21:13 by jjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char *p;
+	const unsigned char *p1;
+	const unsigned char *p2;
 
-	p = b;
-	while (len--)
-		*p++ = (unsigned char)c;
-	return (b);
+	p1 = s1;
+	p2 = s2;
+	while (n--)
+	{
+		if (*p1 != *p2)
+			return (*p1 - *p2);
+		else
+		{
+			p1++;
+			p2++;
+		}
+	}
+	return (0);
 }

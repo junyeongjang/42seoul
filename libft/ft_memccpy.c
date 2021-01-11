@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjang <jjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/10 16:20:08 by jjang             #+#    #+#             */
-/*   Updated: 2021/01/11 19:23:39 by jjang            ###   ########.fr       */
+/*   Created: 2021/01/11 15:14:02 by jjang             #+#    #+#             */
+/*   Updated: 2021/01/11 19:25:26 by jjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*memccpy(void *dest, const void *src, int c, size_t n)
 {
-	unsigned char *p;
+	void *p = memchr (src, c, n);
 
-	p = b;
-	while (len--)
-		*p++ = (unsigned char)c;
-	return (b);
+	if (p != NULL)
+		return mempcpy(dest, src, p - src + 1);
+	memcpy (dest, src, n);
+	return (NULL);
 }
