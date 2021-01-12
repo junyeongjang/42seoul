@@ -6,11 +6,12 @@
 /*   By: jjang <jjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/01 16:44:32 by jjang             #+#    #+#             */
-/*   Updated: 2021/01/01 17:19:55 by jjang            ###   ########.fr       */
+/*   Updated: 2021/01/11 19:26:08 by jjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+
+#include "ft_libft.h"
 
 size_t		ft_strlen(const char *s)
 {

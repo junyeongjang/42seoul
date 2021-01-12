@@ -6,11 +6,13 @@
 /*   By: jjang <jjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 15:17:14 by jjang             #+#    #+#             */
-/*   Updated: 2021/01/06 15:25:03 by jjang            ###   ########.fr       */
+/*   Updated: 2021/01/11 19:22:35 by jjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strchr(const char *s, int c)
+#include "ft_libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
 	while (*s != (char)c)
 		if (!*s++)
