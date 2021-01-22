@@ -6,7 +6,7 @@
 /*   By: jjang <jjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 13:47:35 by jjang             #+#    #+#             */
-/*   Updated: 2021/01/13 17:52:33 by jjang            ###   ########.fr       */
+/*   Updated: 2021/01/19 16:59:59 by jjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	*ft_strrchr(const char *s, int c)
 	start = (char*)s;
 	while (*s++)
 		;
-	while (--s != start && *s != (char)ch)
+	while (--s != start && *s != (char)c)
 		;
-	if (*s == (char)ch)
+	if (*s == (char)c)
 		return (char*)s;
 	return (NULL);
 }
