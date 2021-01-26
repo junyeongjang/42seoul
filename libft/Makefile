@@ -6,7 +6,7 @@
 #    By: jjang <jjang@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 18:15:44 by jjang             #+#    #+#              #
-#    Updated: 2021/01/23 21:18:58 by jjang            ###   ########.fr        #
+#    Updated: 2021/01/25 22:29:33 by jjang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -36,6 +36,7 @@ FILES = ft_memset \
 		ft_isprint \
 		ft_toupper \
 		ft_tolower \
+		ft_strdup \
 		ft_calloc \
 		ft_substr \
 		ft_strjoin \
