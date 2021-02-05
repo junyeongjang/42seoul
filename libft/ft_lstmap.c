@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjang <jjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/20 18:13:08 by jjang             #+#    #+#             */
-/*   Updated: 2021/02/01 13:58:42 by jjang            ###   ########.fr       */
+/*   Created: 2021/02/01 17:09:32 by jjang             #+#    #+#             */
+/*   Updated: 2021/02/03 13:54:09 by jjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char			*new_char;
-	int				idx;
-	unsigned int	s_len;
+	t_list	*result;
+	t_list	*temp;
 
-	idx = 0;
-	s_len = ft_strlen(s);
-	if (!(s) || !(new_char = (char*)malloc(sizeof(char) * (len + 1))))
+	if (lst == NULL || f == NULL)
 		return (NULL);
-	while (len-- && (start < s_len))
+	result = NULL;
+	while (lst)
 	{
-		new_char[idx] = s[start + idx];
-		idx++;
+		temp = ft_lstnew((*f)(lst->content));
+		if (!temp)
+		{
+			ft_lstclear(&result, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&result, temp);
+		temp = temp->next;
+		lst = lst->next;
 	}
-	new_char[idx] = '\0';
-	return (new_char);
+	return (result);
 }

@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjang <jjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/20 18:13:08 by jjang             #+#    #+#             */
-/*   Updated: 2021/02/01 13:58:42 by jjang            ###   ########.fr       */
+/*   Created: 2021/02/01 15:54:42 by jjang             #+#    #+#             */
+/*   Updated: 2021/02/03 13:52:48 by jjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_lstsize(t_list *lst)
 {
-	char			*new_char;
-	int				idx;
-	unsigned int	s_len;
+	int len;
 
-	idx = 0;
-	s_len = ft_strlen(s);
-	if (!(s) || !(new_char = (char*)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	while (len-- && (start < s_len))
+	if (!lst)
+		return (0);
+	len = 0;
+	while (lst)
 	{
-		new_char[idx] = s[start + idx];
-		idx++;
+		len++;
+		if (lst->next)
+			lst = lst->next;
+		else
+			break ;
 	}
-	new_char[idx] = '\0';
-	return (new_char);
+	return (len);
 }

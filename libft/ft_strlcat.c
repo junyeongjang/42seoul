@@ -6,7 +6,7 @@
 /*   By: jjang <jjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 13:26:34 by jjang             #+#    #+#             */
-/*   Updated: 2021/01/19 16:59:41 by jjang            ###   ########.fr       */
+/*   Updated: 2021/02/03 13:58:53 by jjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t  dest_len;
-	size_t  src_len;
-	size_t	i;
-	size_t	j;
+	size_t		i;
+	size_t		j;
+	size_t		dest_len;
+	size_t		src_len;
 
 	j = 0;
 	while (j < size && dest[j])

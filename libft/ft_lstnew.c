@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjang <jjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/06 13:26:34 by jjang             #+#    #+#             */
-/*   Updated: 2021/01/13 18:10:05 by jjang            ###   ########.fr       */
+/*   Created: 2021/02/01 15:40:03 by jjang             #+#    #+#             */
+/*   Updated: 2021/02/03 13:57:48 by jjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+t_list	*ft_lstnew(void *content)
 {
-	char *cp;
+	t_list	*res;
 
-	cp = dest;
-	while (*cp)
-		cp++;
-	while (*cp++ = *src++)
-		;
-	return (dest);
+	if (!(res = (t_list*)malloc(sizeof(t_list))))
+		return (NULL);
+	res->next = NULL;
+	res->content = content;
+	return (res);
 }

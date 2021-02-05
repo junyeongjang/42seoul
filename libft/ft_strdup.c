@@ -6,11 +6,11 @@
 /*   By: jjang <jjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 18:54:39 by jjang             #+#    #+#             */
-/*   Updated: 2021/01/18 19:11:16 by jjang            ###   ########.fr       */
+/*   Updated: 2021/01/25 22:31:55 by jjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lift.h"
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {
@@ -22,5 +22,6 @@ char	*ft_strdup(const char *s1)
 	if (ptr == NULL)
 		return (NULL);
 	ft_memcpy(ptr, s1, len);
+	ptr[len] = '\0';
 	return (ptr);
 }

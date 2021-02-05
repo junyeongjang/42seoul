@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjang <jjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/05 15:14:17 by jjang             #+#    #+#             */
-/*   Updated: 2021/01/13 17:53:51 by jjang            ###   ########.fr       */
+/*   Created: 2021/02/01 12:59:18 by jjang             #+#    #+#             */
+/*   Updated: 2021/02/01 13:28:17 by jjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+void	ft_putchar_fd(char c, int fd)
 {
-	char *cp;
-
-	cp = dest;
-	while (*cp++ = *src++)
-		;
-	return (dest);
+	if (fd < 0)
+		return ;
+	write(fd, &c, 1);
 }
