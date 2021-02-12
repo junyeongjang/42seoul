@@ -11,6 +11,9 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
+
 
 int		word_count(char const *s, char c)
 {
@@ -82,4 +85,12 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	sol(res, s, c, cnt);
 	return (res);
+}
+
+int main(void)
+{
+		char ** res = ft_split("jjang,jjang", ',');
+		printf("%s\n", res[0]);
+		printf("%s\n", res[1]);
+		getchar();
 }

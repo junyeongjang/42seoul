@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
+#include <stdio.h>
 
 char	*ft_strdup(const char *s1)
 {
@@ -24,4 +26,12 @@ char	*ft_strdup(const char *s1)
 	ft_memcpy(ptr, s1, len);
 	ptr[len] = '\0';
 	return (ptr);
+}
+
+
+int main(void)
+{
+		char * res = ft_strdup("123");
+		printf("%s", res);
+		getchar();
 }
